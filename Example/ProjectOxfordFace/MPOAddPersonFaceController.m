@@ -50,6 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"person face");
     self.navigationItem.title = @"Add face";
     [self buildMainUI];
     _selectedIndex = -1;

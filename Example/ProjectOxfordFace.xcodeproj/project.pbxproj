@@ -541,7 +541,7 @@
 				ORGANIZATIONNAME = "David Porter";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = T7S7Y9YM5B;
+						DevelopmentTeam = PBCK83UPCF;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -902,7 +902,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = T7S7Y9YM5B;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -918,7 +918,7 @@
 					"-framework",
 					"\"ProjectOxfordFace\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Zdfgkh.iOSApp;
+				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
@@ -938,7 +938,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = T7S7Y9YM5B;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -954,7 +954,7 @@
 					"-framework",
 					"\"ProjectOxfordFace\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Zdfgkh.iOSApp;
+				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";

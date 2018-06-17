@@ -60,8 +60,13 @@
 
 @implementation MPOPersonGroupController
 
+- (void) saveEmailPersonGroupMain:(NSString*) m{
+    _email = m;
+    NSLog(@"%@", _email);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"person group");
     [self buildMainUI];
     self.navigationItem.title = @"Person Group";
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
@@ -268,24 +273,24 @@
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];
-    printf(" train group is ocurring");
+    //printf(" train group is ocurring");
     NSString *groupName=self.group.groupName;
-    NSLog(@"%@", groupName);//
+    //NSLog(@"%@", groupName);//
     
-    
+    [_brain saveEmailName: _email];
     [_brain saveGroupName: groupName];
     
     for (GroupPerson *person in self.group.people){
-        NSLog(@"%@", person.personName);
+        //NSLog(@"%@", person.personName);
         [_brain savePersonName: person.personName];
         for (PersonFace *face in person.faces){
-            NSLog(@"%@", face.image);
+            //NSLog(@"%@", face.image);
             [_brain savePersonFace: face.image];
         }
-        [_brain clearPersonFaces: person.personName]
+        [_brain clearPersonFaces: person.personName];
     }
     
-    [_brain ssave];
+    //[_brain ssave];
     
     //ADDED STUFF
     
@@ -360,8 +365,27 @@
                 [self.group.people removeObjectAtIndex:_selectedPersonIndex];
                 [_facesCollectionView reloadData];
             }];
+            NSString *groupName=self.group.groupName;
+            //NSLog(@"%@", groupName);//
+            
+            [_brain saveEmailName: _email];
+            [_brain saveGroupName: groupName];
+            
+            for (GroupPerson *person in self.group.people){
+                //NSLog(@"%@", person.personName);
+                [_brain savePersonName: person.personName];
+                for (PersonFace *face in person.faces){
+                    //NSLog(@"%@", face.image);
+                    [_brain savePersonFace: face.image];
+                }
+                [_brain clearPersonFaces: person.personName];
+            }
+             GroupPerson* currentP=self.group.people[_selectedPersonIndex];
+            [_brain deletePerson: currentP.personName];
+            
         }
     } else {
+        //NSLog(@"tag is not zero");
         if (buttonIndex == 0) {
             UIViewController * verificationController = nil;
             for (UIViewController * controller in self.navigationController.viewControllers) {

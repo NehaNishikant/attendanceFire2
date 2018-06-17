@@ -61,6 +61,11 @@
 
 @implementation MPOIdentificationViewController
 
+- (void) saveEmail: (NSString*) m{
+    _email=m;
+    //NSLog(@"%@", _email);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -68,15 +73,19 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"back";
     self.navigationItem.backBarButtonItem = backItem;
+    NSLog(@"indentification");
     [self buildMainUI];
     _results = [[NSMutableArray alloc] init];
     _faces = [[NSMutableArray alloc] init];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_groupListView reloadData];
 }
+
 
 - (void)identify:(id)sender {
     NSIndexPath * indexPath = _groupListView.indexPathForSelectedRow;
@@ -124,7 +133,6 @@
         [_resultListView reloadData];
     }];
 }
-
 
 - (PersonFace*) getFaceByFaceId: (NSString*) faceId {
     for (PersonFace * face in _faces) {
@@ -180,6 +188,7 @@
 
 - (void)ManagePersonGroupAction:(id)sender {
     MPOPersonGroupListController * controller = [[MPOPersonGroupListController alloc] init];
+    [controller saveEmailPersonGroup: _email];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -392,6 +401,8 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:groupCellIdentifier];
         }
         cell.textLabel.text = ((PersonGroup*)GLOBAL.groups[indexPath.row]).groupName;
+        NSLog(@"%@", GLOBAL.groups);
+        //NSLog(@"%@", GLOBAL.groups.);
         cell.backgroundColor = [UIColor clearColor];
         return cell;
     } else {
